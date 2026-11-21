@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NK AI CLIPPER</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#10111b;
+ color:white;
+ font-family:Arial,sans-serif;
+ padding:25px 18px;
+}
+.container{
+ max-width:500px;
+ margin:50px auto;
+ text-align:center;
+}
+h1{color:#8b75ff;font-size:32px}
+p{color:#aaa}
+.box{
+ background:#1d2030;
+ padding:22px;
+ border-radius:18px;
+ margin-top:25px;
+}
+input{
+ width:100%;
+ padding:15px;
+ border:1px solid #555;
+ border-radius:10px;
+ background:#10111b;
+ color:white;
+ margin:15px 0;
+}
+button{
+ width:100%;
+ padding:15px;
+ border:0;
+ border-radius:10px;
+ background:#7657ff;
+ color:white;
+ font-size:17px;
+ font-weight:bold;
+}
+.note{font-size:12px;color:#999}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>NK AI CLIPPER</h1>
+<p>Your Personal AI Video Editor</p>
+<div class="box">
+<h2>🎬 Create Viral Shorts</h2>
+<p>Paste your YouTube video link</p>
+<input id="video" type="url"
+placeholder="Paste YouTube URL here">
+<button onclick="startClip()">CREATE CLIPS</button>
+<p id="message" class="note">
+AI Video Clipper
+</p>
+</div>
+</div>
+<script>
+function startClip(){
+ const url=document.getElementById("video").value;
+ const msg=document.getElementById("message");
+ if(!url.includes("youtube.com") &&
+ !url.includes("youtu.be")){
+ msg.innerText="Please enter a valid YouTube link";
+ return;
+ }
+ msg.innerText="Link received! AI processing will be connected in the next step.";
+}
+</script>
+</body>
+</html>
